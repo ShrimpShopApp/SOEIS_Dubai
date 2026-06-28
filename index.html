@@ -4,223 +4,301 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SOEIS Vertriebs GmbH – Frozen Yogurt & Softeis | Schweiz & Dubai</title>
-    <meta name="description" content="SOEIS Vertriebs GmbH – Schweizer Premium Frozen Yogurt und Softeis. Maschinen von Gelmatic, Pulver und Mix von Doumix, Event Catering. Für die Schweiz und Dubai.">
+    <meta name="description" content="SOEIS Vertriebs GmbH – Schweizer Premium Frozen Yogurt und Softeis. Gelmatic Maschinen, Doumix Pulver, Event Catering in der Schweiz und Dubai.">
+    <meta name="theme-color" content="#383838">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>🧊</text></svg>">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #fff;
-            color: #383838;
-            line-height: 1.6;
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --dark: #383838;
+            --gold: #b0a888;
+            --gold-light: #c4bca0;
+            --bg: #ffffff;
+            --bg-light: #f8f8f8;
+            --text: #383838;
+            --text-muted: #6b6b6b;
+            --border: #e5e5e5;
+            --font: 'Work Sans', HelveticaNeue, 'Helvetica Neue', sans-serif;
         }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
         .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
 
-        /* Header */
-        .header {
-            padding: 20px 24px;
+        /* ===== HEADER ===== */
+        .site-header {
+            padding: 16px 24px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-bottom: 1px solid #e5e5e5;
+            border-bottom: 1px solid var(--border);
             max-width: 1100px;
             margin: 0 auto;
         }
-        .header .logo {
-            font-weight: 700;
-            font-size: 1.3rem;
-            color: #383838;
+        .site-header .logo-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             text-decoration: none;
         }
-        .header .logo span { color: #b0a888; }
-        .header nav a {
-            color: #383838;
+        .site-header .logo-img {
+            height: 40px;
+            width: auto;
+        }
+        .site-header .logo-text {
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: var(--dark);
+            letter-spacing: -0.01em;
+        }
+        .site-header .logo-text span { color: var(--gold); }
+
+        .site-header nav { display: flex; gap: 24px; }
+        .site-header nav a {
+            color: var(--dark);
             text-decoration: none;
-            margin-left: 28px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.08em;
             transition: color 0.2s;
         }
-        .header nav a:hover { color: #b0a888; }
+        .site-header nav a:hover { color: var(--gold); }
 
-        /* Hero */
+        .mobile-nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark);
+            padding: 4px;
+        }
+
+        /* ===== HERO ===== */
         .hero {
             padding: 100px 24px 80px;
             text-align: center;
-            background: linear-gradient(180deg, #fafafa 0%, #fff 50%);
+            background: linear-gradient(180deg, #f8f8f8 0%, var(--bg) 50%);
+        }
+        .hero .hero-logo {
+            max-width: 380px;
+            margin: 0 auto 24px;
+            display: block;
         }
         .hero h1 {
-            font-size: 2.8rem;
+            font-size: 2.4rem;
             font-weight: 700;
             margin-bottom: 12px;
             letter-spacing: -0.02em;
-            color: #383838;
+            color: var(--dark);
         }
-        .hero h1 span { color: #b0a888; }
+        .hero h1 .gold { color: var(--gold); }
         .hero .tagline {
-            font-size: 1.2rem;
-            color: #666;
+            font-size: 1.1rem;
+            color: var(--text-muted);
             max-width: 560px;
-            margin: 0 auto 32px;
+            margin: 0 auto 28px;
+            font-weight: 400;
         }
         .hero .locations {
             display: flex;
             justify-content: center;
             gap: 40px;
             margin-bottom: 40px;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: #888;
         }
-        .hero .locations strong { color: #383838; font-weight: 700; }
-        .btn-primary {
+        .hero .locations span { font-weight: 700; color: var(--dark); }
+
+        .btn {
             display: inline-block;
-            background: #383838;
+            background: var(--dark);
             color: #fff;
             padding: 16px 40px;
-            border-radius: 0;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 0.1em;
+            border: none;
+            cursor: pointer;
             transition: background 0.2s;
         }
-        .btn-primary:hover { background: #555; }
-
-        .btn-secondary {
-            display: inline-block;
-            background: #b0a888;
+        .btn:hover { background: #555; }
+        .btn--gold {
+            background: var(--gold);
             color: #fff;
-            padding: 16px 40px;
-            border-radius: 0;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            transition: background 0.2s;
         }
-        .btn-secondary:hover { background: #c4bca0; }
+        .btn--gold:hover { background: var(--gold-light); }
 
-        /* Sections */
+        /* ===== SECTIONS ===== */
         section { padding: 80px 0; }
+        section:nth-child(even) { background: var(--bg-light); }
         section h2 {
-            font-size: 1.8rem;
+            font-size: 1.75rem;
             font-weight: 700;
-            margin-bottom: 8px;
-            color: #383838;
+            margin-bottom: 4px;
+            color: var(--dark);
         }
-        section .sub {
-            color: #666;
-            font-size: 1rem;
+        section .section-sub {
+            color: var(--text-muted);
+            font-size: 0.95rem;
             margin-bottom: 48px;
-            max-width: 560px;
+            max-width: 600px;
         }
-        section.bg-light {
-            background: #fafafa;
-        }
-        .accent { color: #b0a888; }
+        .accent { color: var(--gold); }
 
+        /* Cards */
         .grid-3 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 24px;
         }
         .card {
-            background: #fff;
-            border: 1px solid #e5e5e5;
-            border-radius: 0;
-            padding: 32px;
-            transition: border-color 0.2s;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            padding: 36px 28px;
+            transition: border-color 0.25s;
         }
-        .card:hover { border-color: #b0a888; }
-        .card .icon { font-size: 2rem; margin-bottom: 16px; }
-        .card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; color: #383838; }
-        .card p { color: #666; font-size: 0.9rem; }
+        .card:hover { border-color: var(--gold); }
+        .card .card-icon { font-size: 2.2rem; margin-bottom: 16px; }
+        .card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; color: var(--dark); }
+        .card p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.65; }
 
+        /* Two Columns */
         .two-col {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 48px;
             align-items: start;
         }
-        .two-col h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 16px; color: #383838; }
+        .two-col h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--dark);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .two-col h3 .accent { color: var(--gold); }
         .two-col ul { list-style: none; }
         .two-col ul li {
-            padding: 8px 0;
-            border-bottom: 1px solid #eee;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
             color: #555;
             font-size: 0.9rem;
         }
-        .two-col ul li::before { content: "• "; color: #b0a888; }
+        .two-col ul li:last-child { border-bottom: none; }
+        .two-col ul li::before { content: "• "; color: var(--gold); }
 
-        .timeline { position: relative; padding-left: 32px; }
-        .timeline::before {
-            content: '';
+        /* Timeline */
+        .timeline-wrap { position: relative; }
+        .timeline-line {
             position: absolute;
-            left: 8px;
-            top: 0;
-            bottom: 0;
+            left: 11px;
+            top: 0; bottom: 0;
             width: 2px;
-            background: #b0a88855;
+            background: var(--gold);
+            opacity: 0.35;
         }
-        .timeline-item { margin-bottom: 40px; position: relative; }
-        .timeline-item::before {
-            content: '';
+        .timeline-item {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 44px;
+        }
+        .timeline-item:last-child { margin-bottom: 0; }
+        .timeline-dot {
             position: absolute;
-            left: -28px;
-            top: 6px;
-            width: 12px;
-            height: 12px;
-            background: #b0a888;
+            left: 2px;
+            top: 4px;
+            width: 20px;
+            height: 20px;
+            background: var(--gold);
             border-radius: 50%;
+            border: 3px solid var(--bg);
+            z-index: 1;
         }
         .timeline-item .date {
-            color: #b0a888;
-            font-size: 0.8rem;
+            color: var(--gold);
+            font-size: 0.75rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.1em;
+            margin-bottom: 2px;
         }
-        .timeline-item h4 { font-size: 1.1rem; margin: 4px 0 8px; color: #383838; }
-        .timeline-item p { color: #666; font-size: 0.9rem; }
+        .timeline-item h4 { font-size: 1.05rem; margin-bottom: 6px; color: var(--dark); }
+        .timeline-item p { color: var(--text-muted); font-size: 0.9rem; }
 
+        /* Contact */
         .contact-section {
             text-align: center;
             padding: 80px 24px;
-            background: #fafafa;
         }
-        .contact-section h2 { margin-bottom: 8px; }
-        .contact-section .sub { margin: 0 auto 40px; }
-        .contact-details { color: #555; margin-bottom: 4px; }
-        .contact-details strong { color: #383838; }
-        .contact-details a { color: #b0a888; text-decoration: none; font-weight: 600; }
-        .contact-details a:hover { opacity: 0.7; }
+        .contact-section .section-sub { margin: 0 auto 40px; }
+        .contact-block { color: var(--text-muted); margin-bottom: 4px; font-size: 0.95rem; }
+        .contact-block strong { color: var(--dark); }
+        .contact-block a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .contact-block a:hover { color: var(--gold-light); }
 
-        footer {
-            border-top: 1px solid #e5e5e5;
+        /* Footer */
+        .site-footer {
+            border-top: 1px solid var(--border);
             padding: 40px 24px;
             text-align: center;
-            color: #888;
+            color: #999;
             font-size: 0.8rem;
         }
-        footer a { color: #b0a888; text-decoration: none; }
+        .site-footer a { color: var(--gold); text-decoration: none; }
 
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 1.8rem; }
-            .header nav { display: none; }
-            .hero .locations { flex-direction: column; gap: 8px; }
+            .site-header nav { display: none; }
+            .mobile-nav-toggle { display: block; }
+            .site-header nav.mobile-open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0; right: 0;
+                background: var(--bg);
+                border-bottom: 1px solid var(--border);
+                padding: 20px 24px;
+                gap: 16px;
+                z-index: 100;
+            }
+            .hero h1 { font-size: 1.6rem; }
+            .hero .hero-logo { max-width: 280px; }
+            .hero .locations { flex-direction: column; gap: 6px; }
             .two-col { grid-template-columns: 1fr; }
+            section { padding: 60px 0; }
         }
     </style>
 </head>
 <body>
 
-<header class="header">
-    <a href="/" class="logo">SOEIS <span>Vertriebs GmbH</span></a>
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+    <a href="/" class="logo-link">
+        <img src="logo-hero.png" alt="SOEIS" class="logo-img" width="131" height="100">
+        <span class="logo-text">SOEIS <span>Vertriebs GmbH</span></span>
+    </a>
+    <button class="mobile-nav-toggle" onclick="document.querySelector('.site-header nav').classList.toggle('mobile-open')" aria-label="Menü">☰</button>
     <nav>
         <a href="#leistungen">Leistungen</a>
         <a href="#maerkte">Märkte</a>
@@ -229,33 +307,36 @@
     </nav>
 </header>
 
+<!-- ===== HERO ===== -->
 <div class="hero">
-    <h1>SOEIS <span>Vertriebs GmbH</span></h1>
+    <img src="logo-hero.png" alt="SOEIS" class="hero-logo" width="524" height="400">
+    <h1>SOEIS <span class="gold">Vertriebs GmbH</span></h1>
     <p class="tagline">Schweizer Premium Frozen Yogurt und Softeis – Maschinen, Pulver und Event Catering für Profis.</p>
     <div class="locations">
-        <div>📍 <strong>Schweiz</strong> Aadorf</div>
-        <div>📍 <strong>Dubai</strong> Meydan Free Zone</div>
+        <div>📍 <span>Schweiz</span> · Aadorf</div>
+        <div>📍 <span>Dubai</span> · Meydan Free Zone</div>
     </div>
-    <a href="#kontakt" class="btn-primary">Kontakt aufnehmen</a>
+    <a href="#kontakt" class="btn">Kontakt aufnehmen</a>
 </div>
 
+<!-- ===== LEISTUNGEN ===== -->
 <section id="leistungen">
     <div class="container">
         <h2>Unsere <span class="accent">Leistungen</span></h2>
-        <p class="sub">Ob Café, Hotel, Restaurant oder Event – wir liefern dir die Infrastruktur für erfolgreiches Softeis-Business.</p>
+        <p class="section-sub">Ob Café, Hotel, Restaurant oder Event – wir liefern die Infrastruktur für erfolgreiches Softeis-Business.</p>
         <div class="grid-3">
             <div class="card">
-                <div class="icon">⚙️</div>
+                <div class="card-icon">⚙️</div>
                 <h3>Maschinen</h3>
-                <p>Gelmatic Premium Soft Ice Maschinen – von der Tischmaschine bis zur Selbstbedienungs-Anlage. Service und Ersatzteile über Partnernetzwerk in UAE und CH.</p>
+                <p>Gelmatic Premium Soft Ice Maschinen – von der Tischmaschine bis zur Selbstbedienungs-Anlage. Service und Ersatzteile über unser Partnernetzwerk in UAE und Schweiz.</p>
             </div>
             <div class="card">
-                <div class="icon">🧪</div>
+                <div class="card-icon">🧪</div>
                 <h3>Pulver &amp; Mix</h3>
                 <p>Frozen Yogurt, Slush, Bubble Tea – hochwertige Pulver und Sirupe von Doumix, Squeeze und Partnern. Schweizer Qualität, EU-Bio zertifiziert.</p>
             </div>
             <div class="card">
-                <div class="icon">🎉</div>
+                <div class="card-icon">🎉</div>
                 <h3>Event Catering</h3>
                 <p>Mobile Soft-Serve-Stationen für Corporate Events, Festivals und Privatpartys. Maschine + Bediener + Premium Mix – aus einer Hand.</p>
             </div>
@@ -263,87 +344,104 @@
     </div>
 </section>
 
-<section id="maerkte" class="bg-light">
+<!-- ===== MÄRKTE ===== -->
+<section id="maerkte">
     <div class="container">
         <h2>Zwei Märkte – <span class="accent">ein Standard</span></h2>
-        <p class="sub">Unsere Qualität gilt überall. SOEIS Vertriebs GmbH bedient die Schweiz und den Golf-Staat.</p>
+        <p class="section-sub">Unsere Qualität gilt überall. SOEIS Vertriebs GmbH bedient die Schweiz und den Golf-Staat.</p>
         <div class="two-col">
             <div>
-                <h3>Schweiz</h3>
+                <h3><span class="accent">CH</span> Schweiz</h3>
                 <ul>
-                    <li>Bestehende Kundenbasis und Infrastruktur</li>
-                    <li>Handelsgeschäft mit Gastro, Detailhandel, Grosshandel</li>
-                    <li>Gelmatic Maschinen und Verbrauchsmaterial</li>
-                    <li>Schweizer Premium-Qualität als Markenversprechen</li>
-                    <li>Synergien mit Swiss Prime Taste AG</li>
+                    <li>Bestehende Kundenbasis und Infrastruktur aus dem SOEIS-Stammgeschäft</li>
+                    <li>Handelsvertrieb an Gastro, Detailhandel und Grosshandel</li>
+                    <li>Gelmatic Maschinen, Verbrauchsmaterial und Wartung</li>
+                    <li>Schweizer Premium-Qualität und EU-Bio-Zertifizierung</li>
+                    <li>Synergien mit Swiss Prime Taste AG Gruppe</li>
                 </ul>
             </div>
             <div>
-                <h3>Dubai (UAE)</h3>
+                <h3><span class="accent">UAE</span> Dubai</h3>
                 <ul>
-                    <li>Ganzjährig 35–45°C – Soft Ice 365 Tage Saison</li>
-                    <li>B2B-Vertrieb: Cafés, Hotels, Restaurants, Caterer</li>
-                    <li>Event Catering: Mobile Soft-Serve-Stationen</li>
-                    <li>Meydan Free Zone Setup – 100% Remote</li>
-                    <li>Service-Partner: Paramount Trading UAE</li>
+                    <li>Ganzjährig 35–45°C – Soft Ice 365 Tage Saison, kein Winter-Einbruch</li>
+                    <li>B2B-Vertrieb an Cafés, Hotels, Restaurants und Caterer</li>
+                    <li>Event Catering mit mobilen Soft-Serve-Stationen</li>
+                    <li>Meydan Free Zone – Firmensitz, 100% Remote Setup</li>
+                    <li>Service-Partner Paramount Trading UAE für Wartung und Ersatzteile</li>
                 </ul>
             </div>
         </div>
     </div>
 </section>
 
+<!-- ===== FAHRPLAN ===== -->
 <section id="fahrplan">
     <div class="container">
         <h2>Unser <span class="accent">Fahrplan</span></h2>
-        <p class="sub">3–6 Monate bis zum operativen Betrieb in Dubai. Monat für Monat.</p>
-        <div class="timeline">
+        <p class="section-sub">3–6 Monate bis zum operativen Betrieb in Dubai. Monat für Monat.</p>
+        <div class="timeline-wrap">
+            <div class="timeline-line"></div>
             <div class="timeline-item">
+                <div class="timeline-dot"></div>
                 <div class="date">Monat 1 · Juli 2026</div>
                 <h4>Gründung und Vorbereitung</h4>
-                <p>Firmengründung SOEIS Vertriebs GmbH (CH) + Meydan Freezone Setup (UAE). Gelmatic und Paramount kontaktieren. FIRS-Import-Vorbereitung.</p>
+                <p>Firmengründung SOEIS Vertriebs GmbH (CH) + Meydan Freezone Setup (UAE). Gelmatic und Paramount Trading kontaktieren. Vorbereitung der FIRS-Import-Registrierung für Pulver-Produkte.</p>
             </div>
             <div class="timeline-item">
+                <div class="timeline-dot"></div>
                 <div class="date">Monat 2 · August 2026</div>
                 <h4>Set und Ship</h4>
-                <p>Freezone vollständig eingerichtet. Erste Maschinen + Pulver nach UAE verschifft. Event-Catering-Paket geschnürt. MEES Networking.</p>
+                <p>Freezone vollständig eingerichtet inklusive Visum. Erste Gelmatic Maschinen und Pulver-Container nach UAE verschifft. Event-Catering-Paket geschnürt. Besuch der MEES (Middle East Event Show) in Dubai.</p>
             </div>
             <div class="timeline-item">
+                <div class="timeline-dot"></div>
                 <div class="date">Monat 3 · September 2026</div>
                 <h4>Proof of Concept</h4>
-                <p>Maschinen + Pulver in UAE eingetroffen. Erste Demo-Events. Booking-Plattformen aktiv. Instagram/TikTok gestartet.</p>
+                <p>Maschinen und Pulver treffen in Dubai ein. Erste Demo-Events mit 3–5 Corporate Kunden. Profile auf Roaming Hunger und Bella's Carts aktiv. Social Media Kanäle starten.</p>
             </div>
             <div class="timeline-item">
+                <div class="timeline-dot"></div>
                 <div class="date">Monat 4–6 · Oktober–Dezember 2026</div>
                 <h4>Skalieren</h4>
-                <p>Regulärer B2B-Vertrieb. 8–12 Catering-Events pro Monat. Erste Maschinenverkäufe an UAE-Kunden. Food Truck Konzept evaluiert.</p>
+                <p>Regulärer B2B-Vertrieb von Maschinen und Pulver in UAE. Ziel: 8–12 Catering-Events pro Monat. Erste Maschinenverkäufe an lokale Kunden. Food Truck Konzept (Bau über wheelsAHOY) evaluieren.</p>
             </div>
         </div>
     </div>
 </section>
 
+<!-- ===== KONTAKT ===== -->
 <section id="kontakt" class="contact-section">
     <div class="container">
         <h2>Bereit für <span class="accent">Soft Ice</span>?</h2>
-        <p class="sub">Ob Maschinenkauf, Pulver-Liefervertrag oder Event-Catering – wir beraten dich gerne.</p>
-        <div class="contact-details">
+        <p class="section-sub">Ob Maschinenkauf, Pulver-Liefervertrag oder Event-Catering – wir beraten dich gerne.</p>
+        <div class="contact-block">
             <strong>SOEIS Vertriebs GmbH</strong><br>
             c/o Swiss Prime Taste AG<br>
             Wittenwilerstrasse 25, CH-8355 Aadorf
         </div>
-        <div class="contact-details" style="margin-top: 16px;">
-            <a href="mailto:info@soeis.ch">info@soeis.ch</a> · 
-            <a href="tel:+41523680058">+41 52 368 00 58</a>
+        <div class="contact-block" style="margin-top: 16px;">
+            <a href="mailto:info@soeis.ch">info@soeis.ch</a> · <a href="tel:+41523680058">+41 52 368 00 58</a>
         </div>
-        <p style="color: #aaa; margin-top: 24px; font-size: 0.8rem;">Dubai · Meydan Free Zone · Service Business License</p>
+        <p class="contact-block" style="margin-top: 24px; font-size: 0.8rem; color: #aaa;">
+            Dubai · Meydan Free Zone · Service Business License
+        </p>
     </div>
 </section>
 
-<footer>
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
     <div class="container">
         <p>&copy; 2026 SOEIS Vertriebs GmbH. Alle Rechte vorbehalten.</p>
         <p style="margin-top: 6px;">Ein Unternehmen der <a href="https://swissprimetaste.ch">Swiss Prime Taste AG</a> Gruppe.</p>
     </div>
 </footer>
+
+<script>
+document.querySelector('.mobile-nav-toggle').addEventListener('click', function() {
+    const nav = document.querySelector('.site-header nav');
+    nav.classList.toggle('mobile-open');
+});
+</script>
 
 </body>
 </html>
