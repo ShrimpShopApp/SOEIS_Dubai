@@ -12,12 +12,12 @@
         body {
             font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
             background: #fff;
-            color: #000;
+            color: #383838;
             line-height: 1.6;
         }
         .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
 
-        /* Header / Navigation */
+        /* Header */
         .header {
             padding: 20px 24px;
             display: flex;
@@ -30,12 +30,12 @@
         .header .logo {
             font-weight: 700;
             font-size: 1.3rem;
-            color: #000;
+            color: #383838;
             text-decoration: none;
         }
-        .header .logo span { color: #0c11e2; }
+        .header .logo span { color: #b0a888; }
         .header nav a {
-            color: #555;
+            color: #383838;
             text-decoration: none;
             margin-left: 28px;
             font-size: 0.9rem;
@@ -44,7 +44,7 @@
             letter-spacing: 0.08em;
             transition: color 0.2s;
         }
-        .header nav a:hover { color: #0c11e2; }
+        .header nav a:hover { color: #b0a888; }
 
         /* Hero */
         .hero {
@@ -57,8 +57,9 @@
             font-weight: 700;
             margin-bottom: 12px;
             letter-spacing: -0.02em;
+            color: #383838;
         }
-        .hero h1 span { color: #0c11e2; }
+        .hero h1 span { color: #b0a888; }
         .hero .tagline {
             font-size: 1.2rem;
             color: #666;
@@ -73,21 +74,36 @@
             font-size: 0.95rem;
             color: #888;
         }
-        .hero .locations strong { color: #0c11e2; font-weight: 600; }
+        .hero .locations strong { color: #383838; font-weight: 700; }
         .btn-primary {
             display: inline-block;
-            background: #0c11e2;
+            background: #383838;
             color: #fff;
             padding: 16px 40px;
-            border-radius: 2px;
+            border-radius: 0;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             text-transform: uppercase;
-            letter-spacing: 0.08em;
-            transition: opacity 0.2s;
+            letter-spacing: 0.1em;
+            transition: background 0.2s;
         }
-        .btn-primary:hover { opacity: 0.6; }
+        .btn-primary:hover { background: #555; }
+
+        .btn-secondary {
+            display: inline-block;
+            background: #b0a888;
+            color: #fff;
+            padding: 16px 40px;
+            border-radius: 0;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: background 0.2s;
+        }
+        .btn-secondary:hover { background: #c4bca0; }
 
         /* Sections */
         section { padding: 80px 0; }
@@ -95,6 +111,7 @@
             font-size: 1.8rem;
             font-weight: 700;
             margin-bottom: 8px;
+            color: #383838;
         }
         section .sub {
             color: #666;
@@ -102,8 +119,10 @@
             margin-bottom: 48px;
             max-width: 560px;
         }
-        section.bg-light { background: #fafafa; }
-        .blue { color: #0c11e2; }
+        section.bg-light {
+            background: #fafafa;
+        }
+        .accent { color: #b0a888; }
 
         .grid-3 {
             display: grid;
@@ -113,13 +132,13 @@
         .card {
             background: #fff;
             border: 1px solid #e5e5e5;
-            border-radius: 2px;
+            border-radius: 0;
             padding: 32px;
             transition: border-color 0.2s;
         }
-        .card:hover { border-color: #0c11e2; }
+        .card:hover { border-color: #b0a888; }
         .card .icon { font-size: 2rem; margin-bottom: 16px; }
-        .card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+        .card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; color: #383838; }
         .card p { color: #666; font-size: 0.9rem; }
 
         .two-col {
@@ -128,7 +147,7 @@
             gap: 48px;
             align-items: start;
         }
-        .two-col h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 16px; }
+        .two-col h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 16px; color: #383838; }
         .two-col ul { list-style: none; }
         .two-col ul li {
             padding: 8px 0;
@@ -136,7 +155,7 @@
             color: #555;
             font-size: 0.9rem;
         }
-        .two-col ul li::before { content: "• "; color: #0c11e2; }
+        .two-col ul li::before { content: "• "; color: #b0a888; }
 
         .timeline { position: relative; padding-left: 32px; }
         .timeline::before {
@@ -146,7 +165,7 @@
             top: 0;
             bottom: 0;
             width: 2px;
-            background: #0c11e233;
+            background: #b0a88855;
         }
         .timeline-item { margin-bottom: 40px; position: relative; }
         .timeline-item::before {
@@ -156,17 +175,17 @@
             top: 6px;
             width: 12px;
             height: 12px;
-            background: #0c11e2;
+            background: #b0a888;
             border-radius: 50%;
         }
         .timeline-item .date {
-            color: #0c11e2;
+            color: #b0a888;
             font-size: 0.8rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.08em;
         }
-        .timeline-item h4 { font-size: 1.1rem; margin: 4px 0 8px; }
+        .timeline-item h4 { font-size: 1.1rem; margin: 4px 0 8px; color: #383838; }
         .timeline-item p { color: #666; font-size: 0.9rem; }
 
         .contact-section {
@@ -177,9 +196,9 @@
         .contact-section h2 { margin-bottom: 8px; }
         .contact-section .sub { margin: 0 auto 40px; }
         .contact-details { color: #555; margin-bottom: 4px; }
-        .contact-details strong { color: #0c11e2; }
-        .contact-details a { color: #0c11e2; text-decoration: none; }
-        .contact-details a:hover { opacity: 0.6; }
+        .contact-details strong { color: #383838; }
+        .contact-details a { color: #b0a888; text-decoration: none; font-weight: 600; }
+        .contact-details a:hover { opacity: 0.7; }
 
         footer {
             border-top: 1px solid #e5e5e5;
@@ -188,7 +207,7 @@
             color: #888;
             font-size: 0.8rem;
         }
-        footer a { color: #0c11e2; text-decoration: none; }
+        footer a { color: #b0a888; text-decoration: none; }
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 1.8rem; }
@@ -222,13 +241,13 @@
 
 <section id="leistungen">
     <div class="container">
-        <h2>Unsere <span class="blue">Leistungen</span></h2>
+        <h2>Unsere <span class="accent">Leistungen</span></h2>
         <p class="sub">Ob Café, Hotel, Restaurant oder Event – wir liefern dir die Infrastruktur für erfolgreiches Softeis-Business.</p>
         <div class="grid-3">
             <div class="card">
                 <div class="icon">⚙️</div>
                 <h3>Maschinen</h3>
-                <p>Gelmatic Premium Soft Ice Maschinen – von der Tischmaschine bis zur Selbstbedienungs-Anlage. Service und Ersatzteile über unser Partnernetzwerk in UAE und CH.</p>
+                <p>Gelmatic Premium Soft Ice Maschinen – von der Tischmaschine bis zur Selbstbedienungs-Anlage. Service und Ersatzteile über Partnernetzwerk in UAE und CH.</p>
             </div>
             <div class="card">
                 <div class="icon">🧪</div>
@@ -246,7 +265,7 @@
 
 <section id="maerkte" class="bg-light">
     <div class="container">
-        <h2>Zwei Märkte – <span class="blue">ein Standard</span></h2>
+        <h2>Zwei Märkte – <span class="accent">ein Standard</span></h2>
         <p class="sub">Unsere Qualität gilt überall. SOEIS Vertriebs GmbH bedient die Schweiz und den Golf-Staat.</p>
         <div class="two-col">
             <div>
@@ -262,7 +281,7 @@
             <div>
                 <h3>Dubai (UAE)</h3>
                 <ul>
-                    <li>Ganzjährig 35-45°C – Soft Ice 365 Tage Saison</li>
+                    <li>Ganzjährig 35–45°C – Soft Ice 365 Tage Saison</li>
                     <li>B2B-Vertrieb: Cafés, Hotels, Restaurants, Caterer</li>
                     <li>Event Catering: Mobile Soft-Serve-Stationen</li>
                     <li>Meydan Free Zone Setup – 100% Remote</li>
@@ -275,7 +294,7 @@
 
 <section id="fahrplan">
     <div class="container">
-        <h2>Unser <span class="blue">Fahrplan</span></h2>
+        <h2>Unser <span class="accent">Fahrplan</span></h2>
         <p class="sub">3–6 Monate bis zum operativen Betrieb in Dubai. Monat für Monat.</p>
         <div class="timeline">
             <div class="timeline-item">
@@ -304,7 +323,7 @@
 
 <section id="kontakt" class="contact-section">
     <div class="container">
-        <h2>Bereit für <span class="blue">Soft Ice</span>?</h2>
+        <h2>Bereit für <span class="accent">Soft Ice</span>?</h2>
         <p class="sub">Ob Maschinenkauf, Pulver-Liefervertrag oder Event-Catering – wir beraten dich gerne.</p>
         <div class="contact-details">
             <strong>SOEIS Vertriebs GmbH</strong><br>
