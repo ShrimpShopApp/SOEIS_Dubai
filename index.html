@@ -5,239 +5,530 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SOEIS Vertriebs GmbH – Frozen Yogurt & Softeis | Schweiz & Dubai</title>
     <meta name="description" content="SOEIS Vertriebs GmbH – Schweizer Premium Frozen Yogurt und Softeis. Gelmatic Maschinen, Doumix Pulver, Event Catering in der Schweiz und Dubai.">
-    <meta name="theme-color" content="#383838">
+    <meta name="theme-color" content="#282828">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
     <link rel="icon" href="favicon.png" type="image/png">
     <style>
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
         :root {
-            --dark: #383838;
-            --gold: #b0a888;
-            --gold-light: #c4bca0;
-            --bg: #ffffff;
-            --bg-light: #f8f8f8;
-            --text: #383838;
-            --text-muted: #6b6b6b;
-            --border: #e5e5e5;
-            --font: 'Work Sans', HelveticaNeue, 'Helvetica Neue', sans-serif;
+            --dark:        #282828;
+            --dark-rich:   #1a1a1a;
+            --gold:        #b8a878;
+            --gold-hover:  #9a8d60;
+            --gold-light:  #d4c8a0;
+            --gold-pale:   #f5f0e6;
+            --gold-faint:  #faf8f2;
+            --cream:       #faf9f6;
+            --cream-dark:  #f0ece2;
+            --white:       #ffffff;
+            --text:        #282828;
+            --text-muted:  #666666;
+            --border:      #e2ddd0;
+            --font:        'Work Sans', HelveticaNeue, 'Helvetica Neue', sans-serif;
         }
+
         html { scroll-behavior: smooth; }
+
         body {
             font-family: var(--font);
-            background: var(--bg);
+            background: var(--white);
             color: var(--text);
-            line-height: 1.6;
+            line-height: 1.65;
             -webkit-font-smoothing: antialiased;
         }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
 
-        /* Header */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+
+        /* ───── HEADER ───── */
         .site-header {
-            padding: 16px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 200;
+            background: var(--dark-rich);
+            border-bottom: 2px solid var(--gold);
+        }
+        .site-header-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 32px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-bottom: 1px solid var(--border);
-            max-width: 1100px;
-            margin: 0 auto;
+            height: 68px;
         }
-        .site-header .logo-link {
+        .logo-link {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
             text-decoration: none;
         }
-        .site-header .logo-img {
-            height: 48px;
-            width: auto;
+        .logo-img { height: 44px; width: auto; }
+        .logo-text {
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: var(--white);
+            letter-spacing: 0.04em;
         }
-        .site-header .logo-text {
-            font-weight: 700;
-            font-size: 1.15rem;
-            color: var(--dark);
-        }
-        .site-header .logo-text span { color: var(--gold); }
-        .site-header nav { display: flex; gap: 24px; }
+        .logo-text span { color: var(--gold); }
+
+        .site-header nav { display: flex; gap: 8px; }
         .site-header nav a {
-            color: var(--dark);
+            color: rgba(255,255,255,0.75);
             text-decoration: none;
-            font-size: 0.85rem;
+            font-size: 0.78rem;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.08em;
-            transition: color 0.2s;
+            letter-spacing: 0.1em;
+            padding: 8px 14px;
+            border-radius: 2px;
+            transition: color 0.2s, background 0.2s;
         }
-        .site-header nav a:hover { color: var(--gold); }
+        .site-header nav a:hover {
+            color: var(--gold);
+            background: rgba(184,168,120,0.12);
+        }
+
         .mobile-nav-toggle {
             display: none;
             background: none;
             border: none;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             cursor: pointer;
-            color: var(--dark);
+            color: var(--white);
             padding: 4px;
         }
 
-        /* Hero */
+        /* ───── HERO ───── */
         .hero {
-            padding: 80px 24px 64px;
+            background: linear-gradient(160deg, #1a1a1a 0%, #2e2b24 55%, #1a1a1a 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 100px 32px 90px;
             text-align: center;
-            background: linear-gradient(180deg, #f8f8f8 0%, var(--bg) 50%);
         }
-        .hero .hero-logo {
-            max-height: 200px;
+
+        /* decorative background pinwheels */
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(ellipse 600px 400px at 80% 20%, rgba(184,168,120,0.06) 0%, transparent 70%),
+                radial-gradient(ellipse 400px 300px at 10% 80%, rgba(184,168,120,0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-logo {
+            max-height: 210px;
             width: auto;
-            margin: 0 auto 20px;
+            margin: 0 auto 36px;
             display: block;
+            position: relative;
+            z-index: 1;
+            filter: drop-shadow(0 8px 32px rgba(0,0,0,0.5));
         }
+
         .hero h1 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 12px;
-            color: var(--dark);
+            position: relative;
+            z-index: 1;
+            font-size: 2.6rem;
+            font-weight: 800;
+            color: var(--white);
+            letter-spacing: -0.01em;
+            margin-bottom: 16px;
+            line-height: 1.15;
         }
-        .hero h1 .gold { color: var(--gold); }
+        .hero h1 em {
+            font-style: normal;
+            color: var(--gold);
+        }
+
         .hero .tagline {
-            font-size: 1.05rem;
-            color: var(--text-muted);
+            position: relative;
+            z-index: 1;
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.6);
             max-width: 560px;
-            margin: 0 auto 24px;
+            margin: 0 auto 36px;
+            font-weight: 300;
+            line-height: 1.6;
         }
+
         .hero .locations {
+            position: relative;
+            z-index: 1;
             display: flex;
             justify-content: center;
-            gap: 40px;
-            margin-bottom: 32px;
-            font-size: 0.9rem;
-            color: #888;
-        }
-        .hero .locations span { font-weight: 700; color: var(--dark); }
-
-        .btn {
-            display: inline-block;
-            background: var(--dark);
-            color: #fff;
-            padding: 16px 40px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            transition: background 0.2s;
-        }
-        .btn:hover { background: #555; }
-
-        /* Sections */
-        section { padding: 72px 0; }
-        section:nth-child(even) { background: var(--bg-light); }
-        section h2 {
-            font-size: 1.65rem;
-            font-weight: 700;
-            margin-bottom: 4px;
-            color: var(--dark);
-        }
-        section .section-sub {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 40px;
-            max-width: 600px;
-        }
-        .accent { color: var(--gold); }
-
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-        }
-        .card {
-            background: var(--bg);
-            border: 1px solid var(--border);
-            padding: 36px 28px;
-            transition: border-color 0.25s;
-        }
-        .card:hover { border-color: var(--gold); }
-        .card .card-icon { font-size: 2rem; margin-bottom: 14px; }
-        .card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; color: var(--dark); }
-        .card p { color: var(--text-muted); font-size: 0.9rem; }
-
-        .two-col {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
             gap: 48px;
+            margin-bottom: 48px;
         }
-        .two-col h3 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 16px;
-            color: var(--dark);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+        .location-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
         }
-        .two-col h3 .accent { color: var(--gold); }
-        .two-col ul { list-style: none; }
-        .two-col ul li {
-            padding: 10px 0;
-            border-bottom: 1px solid var(--border);
-            color: #555;
-            font-size: 0.9rem;
+        .location-badge .flag {
+            font-size: 1.6rem;
         }
-        .two-col ul li:last-child { border-bottom: none; }
-        .two-col ul li::before { content: "• "; color: var(--gold); }
-
-        .timeline-wrap { position: relative; }
-        .timeline-line {
-            position: absolute;
-            left: 11px;
-            top: 0; bottom: 0;
-            width: 2px;
-            background: var(--gold);
-            opacity: 0.35;
-        }
-        .timeline-item {
-            position: relative;
-            padding-left: 40px;
-            margin-bottom: 44px;
-        }
-        .timeline-item:last-child { margin-bottom: 0; }
-        .timeline-dot {
-            position: absolute;
-            left: 2px;
-            top: 4px;
-            width: 20px;
-            height: 20px;
-            background: var(--gold);
-            border-radius: 50%;
-            border: 3px solid var(--bg);
-            z-index: 1;
-        }
-        .timeline-item .date {
-            color: var(--gold);
+        .location-badge .city {
             font-size: 0.75rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 2px;
+            letter-spacing: 0.12em;
+            color: var(--gold);
         }
-        .timeline-item h4 { font-size: 1.05rem; margin-bottom: 6px; color: var(--dark); }
-        .timeline-item p { color: var(--text-muted); font-size: 0.9rem; }
+        .location-badge .country {
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.45);
+            letter-spacing: 0.06em;
+        }
 
-        .contact-section { text-align: center; padding: 72px 24px; }
-        .contact-section .section-sub { margin: 0 auto 40px; }
-        .contact-block { color: var(--text-muted); margin-bottom: 4px; font-size: 0.95rem; }
-        .contact-block strong { color: var(--dark); }
-        .contact-block a { color: var(--gold); text-decoration: none; font-weight: 600; }
-        .contact-block a:hover { color: var(--gold-light); }
+        .hero-divider {
+            position: relative;
+            z-index: 1;
+            width: 1px;
+            height: 48px;
+            background: rgba(184,168,120,0.3);
+            margin: 0;
+            align-self: center;
+        }
 
-        footer {
-            border-top: 1px solid var(--border);
-            padding: 40px 24px;
+        /* ───── BUTTONS ───── */
+        .btn {
+            position: relative;
+            z-index: 1;
+            display: inline-block;
+            background: var(--gold);
+            color: var(--dark-rich);
+            padding: 16px 44px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            transition: background 0.25s, transform 0.2s;
+        }
+        .btn:hover {
+            background: var(--gold-hover);
+            transform: translateY(-1px);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 1.5px solid rgba(184,168,120,0.5);
+        }
+        .btn-outline:hover {
+            background: rgba(184,168,120,0.12);
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+        .hero-cta { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+
+        /* ───── SECTION BASE ───── */
+        section { padding: 88px 0; }
+        .section-cream { background: var(--cream); }
+        .section-cream-dark { background: var(--cream-dark); }
+        .section-dark {
+            background: var(--dark-rich);
+            color: var(--white);
+        }
+
+        .section-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+        section h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+        .section-dark h2 { color: var(--white); }
+        .section-dark .section-label { color: var(--gold-light); }
+
+        .accent { color: var(--gold); }
+
+        .section-sub {
+            font-size: 1rem;
+            color: var(--text-muted);
+            max-width: 580px;
+            margin-bottom: 56px;
+            line-height: 1.7;
+        }
+        .section-dark .section-sub { color: rgba(255,255,255,0.55); }
+
+        /* gold underline for headings */
+        .heading-decorated {
+            display: inline-block;
+            padding-bottom: 14px;
+            border-bottom: 3px solid var(--gold);
+            margin-bottom: 40px;
+        }
+        .heading-decorated + .section-sub { margin-top: 24px; }
+
+        /* ───── CARDS ───── */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            padding: 40px 32px;
+            position: relative;
+            transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+            overflow: hidden;
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: var(--gold);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.10);
+            border-color: transparent;
+        }
+        .card:hover::before { transform: scaleX(1); }
+
+        .card-icon-wrap {
+            width: 56px;
+            height: 56px;
+            background: var(--gold-pale);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            transition: background 0.25s;
+        }
+        .card:hover .card-icon-wrap { background: var(--gold-light); }
+
+        .card h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        .card p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.65; }
+
+        /* ───── MARKETS TWO-COL ───── */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px;
+        }
+        .market-col {
+            padding: 40px 40px;
+            background: var(--white);
+        }
+        .market-col:first-child { border-right: 2px solid var(--gold); }
+
+        .market-col h3 {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+        .market-col h4 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 24px;
+            letter-spacing: -0.01em;
+        }
+        .market-col ul { list-style: none; }
+        .market-col ul li {
+            padding: 11px 0;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+        }
+        .market-col ul li:last-child { border-bottom: none; }
+        .market-col ul li::before {
+            content: '';
+            display: block;
+            flex-shrink: 0;
+            width: 6px;
+            height: 6px;
+            background: var(--gold);
+            border-radius: 50%;
+            margin-top: 7px;
+        }
+
+        /* ───── TIMELINE ───── */
+        .timeline-wrap { position: relative; padding-left: 48px; }
+        .timeline-track {
+            position: absolute;
+            left: 13px;
+            top: 10px;
+            bottom: 10px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--gold) 0%, var(--gold-light) 100%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 52px;
+        }
+        .timeline-item:last-child { margin-bottom: 0; }
+
+        .timeline-dot {
+            position: absolute;
+            left: -52px;
+            top: 2px;
+            width: 26px;
+            height: 26px;
+            background: var(--gold);
+            border-radius: 50%;
+            border: 4px solid var(--white);
+            box-shadow: 0 0 0 2px var(--gold), 0 4px 12px rgba(184,168,120,0.4);
+            z-index: 1;
+        }
+
+        .timeline-item .date {
+            display: inline-block;
+            background: var(--gold-pale);
+            color: var(--gold-hover);
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            padding: 4px 10px;
+            margin-bottom: 10px;
+        }
+        .timeline-item h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+        .timeline-item p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.65; }
+
+        /* ───── STATS STRIP ───── */
+        .stats-strip {
+            background: var(--gold);
+            padding: 48px 32px;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 32px;
+            max-width: 1100px;
+            margin: 0 auto;
             text-align: center;
-            color: #999;
-            font-size: 0.8rem;
         }
-        footer a { color: var(--gold); text-decoration: none; }
+        .stat-item {}
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--dark-rich);
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+        .stat-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: rgba(26,26,26,0.65);
+        }
 
+        /* ───── CONTACT ───── */
+        .contact-wrap {
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+        .contact-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px;
+            margin: 48px 0;
+        }
+        .contact-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(184,168,120,0.2);
+            padding: 32px 28px;
+            text-align: left;
+        }
+        .contact-card .cc-label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+        .contact-card p {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.7;
+        }
+        .contact-card a {
+            color: var(--gold-light);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        .contact-card a:hover { color: var(--gold); }
+
+        /* ───── FOOTER ───── */
+        footer {
+            background: var(--dark-rich);
+            border-top: 1px solid rgba(184,168,120,0.2);
+            padding: 40px 32px;
+            text-align: center;
+        }
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+        .footer-logo {
+            height: 36px;
+            width: auto;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+        .footer-logo:hover { opacity: 1; }
+        footer p {
+            color: rgba(255,255,255,0.35);
+            font-size: 0.78rem;
+        }
+        footer a {
+            color: var(--gold);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        footer a:hover { color: var(--gold-light); }
+
+        /* ───── MOBILE ───── */
         @media (max-width: 768px) {
             .site-header nav { display: none; }
             .mobile-nav-toggle { display: block; }
@@ -245,66 +536,118 @@
                 display: flex;
                 flex-direction: column;
                 position: absolute;
-                top: 72px;
+                top: 68px;
                 left: 0; right: 0;
-                background: var(--bg);
-                border-bottom: 1px solid var(--border);
-                padding: 20px 24px;
-                gap: 14px;
+                background: var(--dark-rich);
+                border-bottom: 2px solid var(--gold);
+                padding: 16px 24px;
+                gap: 4px;
                 z-index: 100;
             }
-            .hero h1 { font-size: 1.5rem; }
-            .hero .hero-logo { max-height: 140px; }
-            .hero .locations { flex-direction: column; gap: 6px; }
-            .two-col { grid-template-columns: 1fr; }
-            section { padding: 56px 0; }
+            .site-header nav.mobile-open a { padding: 12px 0; }
+
+            .hero { padding: 72px 24px 64px; }
+            .hero h1 { font-size: 1.8rem; }
+            .hero-logo { max-height: 160px; }
+            .hero .locations { flex-direction: column; gap: 24px; align-items: center; }
+            .hero-divider { width: 48px; height: 1px; }
+
+            section { padding: 64px 0; }
+            .two-col { grid-template-columns: 1fr; gap: 0; }
+            .market-col:first-child { border-right: none; border-bottom: 2px solid var(--gold); }
+            .market-col { padding: 32px 24px; }
+
+            .contact-cards { grid-template-columns: 1fr; }
+            .container { padding: 0 20px; }
+            .timeline-wrap { padding-left: 40px; }
+            .timeline-dot { left: -44px; }
         }
     </style>
 </head>
 <body>
 
+<!-- ───── HEADER ───── -->
 <header class="site-header">
-    <a href="/" class="logo-link">
-        <img src="logo.png" alt="SOEIS" class="logo-img" width="105" height="80">
-        <span class="logo-text">SOEIS <span>Vertriebs GmbH</span></span>
-    </a>
-    <button class="mobile-nav-toggle" onclick="document.querySelector('.site-header nav').classList.toggle('mobile-open')" aria-label="Menü">☰</button>
-    <nav>
-        <a href="#leistungen">Leistungen</a>
-        <a href="#maerkte">Märkte</a>
-        <a href="#fahrplan">Fahrplan</a>
-        <a href="#kontakt">Kontakt</a>
-    </nav>
+    <div class="site-header-inner">
+        <a href="/" class="logo-link">
+            <img src="logo.png" alt="SOEIS" class="logo-img" width="105" height="80">
+            <span class="logo-text">SOEIS <span>Vertriebs GmbH</span></span>
+        </a>
+        <button class="mobile-nav-toggle" aria-label="Menü">☰</button>
+        <nav>
+            <a href="#leistungen">Leistungen</a>
+            <a href="#maerkte">Märkte</a>
+            <a href="#fahrplan">Fahrplan</a>
+            <a href="#kontakt">Kontakt</a>
+        </nav>
+    </div>
 </header>
 
+<!-- ───── HERO ───── -->
 <div class="hero">
-    <img src="logo-hero.png" alt="SOEIS" class="hero-logo" width="393" height="300">
-    <h1>SOEIS <span class="gold">Vertriebs GmbH</span></h1>
-    <p class="tagline">Schweizer Premium Frozen Yogurt und Softeis – Maschinen, Pulver und Event Catering für Profis.</p>
+    <img src="logo-hero.png" alt="SOEIS – Heiss auf Eis" class="hero-logo" width="393" height="300">
+    <h1>Schweizer Softeis-<em>Expertise</em><br>für Schweiz & Dubai</h1>
+    <p class="tagline">Gelmatic Maschinen, Premium Pulver und Event Catering – alles aus einer Hand für Profis im Gastgewerbe.</p>
     <div class="locations">
-        <div>📍 <span>Schweiz</span> · Aadorf</div>
-        <div>📍 <span>Dubai</span> · Meydan Free Zone</div>
+        <div class="location-badge">
+            <span class="flag">🇨🇭</span>
+            <span class="city">Aadorf</span>
+            <span class="country">Schweiz</span>
+        </div>
+        <div class="hero-divider"></div>
+        <div class="location-badge">
+            <span class="flag">🇦🇪</span>
+            <span class="city">Dubai</span>
+            <span class="country">Meydan Free Zone</span>
+        </div>
     </div>
-    <a href="#kontakt" class="btn">Kontakt aufnehmen</a>
+    <div class="hero-cta">
+        <a href="#kontakt" class="btn">Kontakt aufnehmen</a>
+        <a href="#leistungen" class="btn btn-outline">Leistungen ansehen</a>
+    </div>
 </div>
 
+<!-- ───── STATS STRIP ───── -->
+<div class="stats-strip">
+    <div class="stats-grid">
+        <div class="stat-item">
+            <div class="stat-number">365</div>
+            <div class="stat-label">Tage Saison in Dubai</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">35–45°</div>
+            <div class="stat-label">Grad ganzjährig</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">3–6</div>
+            <div class="stat-label">Monate bis Betrieb</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">2</div>
+            <div class="stat-label">Märkte – ein Standard</div>
+        </div>
+    </div>
+</div>
+
+<!-- ───── LEISTUNGEN ───── -->
 <section id="leistungen">
     <div class="container">
-        <h2>Unsere <span class="accent">Leistungen</span></h2>
-        <p class="section-sub">Ob Café, Hotel, Restaurant oder Event – wir liefern die Infrastruktur für erfolgreiches Softeis-Business.</p>
+        <p class="section-label">Was wir bieten</p>
+        <h2 class="heading-decorated">Unsere <span class="accent">Leistungen</span></h2>
+        <p class="section-sub">Ob Café, Hotel, Restaurant oder Event – wir liefern die vollständige Infrastruktur für erfolgreiches Softeis-Business.</p>
         <div class="grid-3">
             <div class="card">
-                <div class="card-icon">⚙️</div>
+                <div class="card-icon-wrap">⚙️</div>
                 <h3>Maschinen</h3>
                 <p>Gelmatic Premium Soft Ice Maschinen – von der Tischmaschine bis zur Selbstbedienungs-Anlage. Service und Ersatzteile über unser Partnernetzwerk in UAE und Schweiz.</p>
             </div>
             <div class="card">
-                <div class="card-icon">🧪</div>
+                <div class="card-icon-wrap">🧪</div>
                 <h3>Pulver &amp; Mix</h3>
                 <p>Frozen Yogurt, Slush, Bubble Tea – hochwertige Pulver und Sirupe von Doumix, Squeeze und Partnern. Schweizer Qualität, EU-Bio zertifiziert.</p>
             </div>
             <div class="card">
-                <div class="card-icon">🎉</div>
+                <div class="card-icon-wrap">🎉</div>
                 <h3>Event Catering</h3>
                 <p>Mobile Soft-Serve-Stationen für Corporate Events, Festivals und Privatpartys. Maschine + Bediener + Premium Mix – aus einer Hand.</p>
             </div>
@@ -312,13 +655,16 @@
     </div>
 </section>
 
-<section id="maerkte">
+<!-- ───── MÄRKTE ───── -->
+<section id="maerkte" class="section-cream-dark">
     <div class="container">
-        <h2>Zwei Märkte – <span class="accent">ein Standard</span></h2>
+        <p class="section-label">Zwei Standorte</p>
+        <h2 class="heading-decorated">Zwei Märkte – <span class="accent">ein Standard</span></h2>
         <p class="section-sub">Unsere Qualität gilt überall. SOEIS Vertriebs GmbH bedient die Schweiz und den Golf-Staat.</p>
         <div class="two-col">
-            <div>
-                <h3><span class="accent">CH</span> Schweiz</h3>
+            <div class="market-col">
+                <h3>🇨🇭&nbsp; Schweiz</h3>
+                <h4>Aadorf · CH</h4>
                 <ul>
                     <li>Bestehende Kundenbasis und Infrastruktur aus dem SOEIS-Stammgeschäft</li>
                     <li>Handelsvertrieb an Gastro, Detailhandel und Grosshandel</li>
@@ -327,8 +673,9 @@
                     <li>Synergien mit Swiss Prime Taste AG Gruppe</li>
                 </ul>
             </div>
-            <div>
-                <h3><span class="accent">UAE</span> Dubai</h3>
+            <div class="market-col">
+                <h3>🇦🇪&nbsp; Vereinigte Arabische Emirate</h3>
+                <h4>Dubai · UAE</h4>
                 <ul>
                     <li>Ganzjährig 35–45°C – Soft Ice 365 Tage Saison, kein Winter-Einbruch</li>
                     <li>B2B-Vertrieb an Cafés, Hotels, Restaurants und Caterer</li>
@@ -341,12 +688,14 @@
     </div>
 </section>
 
+<!-- ───── FAHRPLAN ───── -->
 <section id="fahrplan">
     <div class="container">
-        <h2>Unser <span class="accent">Fahrplan</span></h2>
+        <p class="section-label">Schritt für Schritt</p>
+        <h2 class="heading-decorated">Unser <span class="accent">Fahrplan</span></h2>
         <p class="section-sub">3–6 Monate bis zum operativen Betrieb in Dubai. Monat für Monat.</p>
         <div class="timeline-wrap">
-            <div class="timeline-line"></div>
+            <div class="timeline-track"></div>
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="date">Monat 1 · Juli 2026</div>
@@ -375,28 +724,45 @@
     </div>
 </section>
 
-<section id="kontakt" class="contact-section">
+<!-- ───── KONTAKT ───── -->
+<section id="kontakt" class="section-dark">
     <div class="container">
-        <h2>Bereit für <span class="accent">Soft Ice</span>?</h2>
-        <p class="section-sub">Ob Maschinenkauf, Pulver-Liefervertrag oder Event-Catering – wir beraten dich gerne.</p>
-        <div class="contact-block">
-            <strong>SOEIS Vertriebs GmbH</strong><br>
-            c/o Swiss Prime Taste AG<br>
-            Wittenwilerstrasse 25, CH-8355 Aadorf
+        <div class="contact-wrap">
+            <p class="section-label">Bereit loszulegen?</p>
+            <h2>Bereit für <span class="accent">Soft Ice</span>?</h2>
+            <p class="section-sub">Ob Maschinenkauf, Pulver-Liefervertrag oder Event-Catering – wir beraten Sie gerne persönlich.</p>
+            <div class="contact-cards">
+                <div class="contact-card">
+                    <p class="cc-label">Hauptsitz Schweiz</p>
+                    <p>
+                        SOEIS Vertriebs GmbH<br>
+                        c/o Swiss Prime Taste AG<br>
+                        Wittenwilerstrasse 25<br>
+                        CH-8355 Aadorf
+                    </p>
+                </div>
+                <div class="contact-card">
+                    <p class="cc-label">Kontakt</p>
+                    <p>
+                        <a href="mailto:info@soeis.ch">info@soeis.ch</a><br>
+                        <a href="tel:+41523680058">+41 52 368 00 58</a><br>
+                        <br>
+                        Dubai · Meydan Free Zone<br>
+                        Service Business License
+                    </p>
+                </div>
+            </div>
+            <a href="mailto:info@soeis.ch" class="btn">Jetzt anfragen</a>
         </div>
-        <div class="contact-block" style="margin-top: 16px;">
-            <a href="mailto:info@soeis.ch">info@soeis.ch</a> · <a href="tel:+41523680058">+41 52 368 00 58</a>
-        </div>
-        <p class="contact-block" style="margin-top: 24px; font-size: 0.8rem; color: #aaa;">
-            Dubai · Meydan Free Zone · Service Business License
-        </p>
     </div>
 </section>
 
+<!-- ───── FOOTER ───── -->
 <footer>
-    <div class="container">
-        <p>&copy; 2026 SOEIS Vertriebs GmbH. Alle Rechte vorbehalten.</p>
-        <p style="margin-top: 6px;">Ein Unternehmen der <a href="https://swissprimetaste.ch">Swiss Prime Taste AG</a> Gruppe.</p>
+    <div class="footer-inner">
+        <img src="logo.png" alt="SOEIS" class="footer-logo" width="80" height="61">
+        <p>&copy; 2026 SOEIS Vertriebs GmbH · Alle Rechte vorbehalten</p>
+        <p>Ein Unternehmen der <a href="https://swissprimetaste.ch">Swiss Prime Taste AG</a> Gruppe</p>
     </div>
 </footer>
 
